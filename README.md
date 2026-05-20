@@ -62,10 +62,15 @@ Bark 推送 → 你的手机
 
 ### 安装与配置
 
-```bash
-# 克隆项目
-git clone https://github.com/callie0313/dylan-heartbeat.git
-cd dylan-heartbeat
+# 获取代码
+因为本项目需要修改时区、唤醒间隔等个性化配置，**建议先 Fork 一份到自己的账号下**，再 clone 你自己的仓库。
+
+1. 点击右上角 `Fork` 按钮，将仓库复制到你的 GitHub 账号
+2. 在终端执行：
+   ```bash
+   # 请把 YOUR_USERNAME 替换成你的 GitHub 用户名
+   git clone https://github.com/YOUR_USERNAME/dylan-heartbeat.git
+   cd dylan-heartbeat
 
 # 安装依赖
 npm install
