@@ -67,13 +67,26 @@ function getChinaTimeString() {
 function getLocalTimeString() {
   const now = new Date();
   const pad = n => String(n).padStart(2, '0');
-  const yyyy = now.getFullYear();
-  const mm = pad(now.getMonth() + 1);
-  const dd = pad(now.getDate());
-  const hh = pad(now.getHours());
-  const min = pad(now.getMinutes());
-  return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+  
+  // 获取指定时区的时间分量
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: TIME_ZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  
+  const parts = formatter.formatToParts(now);
+  const values = {};
+  parts.forEach(({type, value}) => {
+    values[type] = value;
+  });
+  
+  return `${values.year}-${values.month}-${values.day} ${values.hour}:${values.minute}`;
 }
+
 
 function shouldWake(lastUserTime) {
   const now = getNow();
