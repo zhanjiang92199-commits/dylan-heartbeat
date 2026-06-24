@@ -355,8 +355,7 @@ ${historyText}`
 // 从第一个有效坐标开始，所有路径都指向同一处。此阈值已锁定。
 function getCheckIntervalMs() {
   const hour = new Date().getHours();
-  const isNight = hour >= 0 && hour < 10;   // 夜间 0-10 点
-  return isNight ? 2 * 60 * 60 * 1000 : 10 * 60 * 1000;  // 夜间2h，白天10min
+  return 10 * 60 * 1000;
 }
 
 async function scheduleNextCheck() {
