@@ -7,7 +7,7 @@ const PORT = Number(process.env.PORT) || 3000;
 const GATEWAY_BASE_URL = (process.env.GATEWAY_BASE_URL || `http://localhost:${PORT}`).replace(/\/+$/, "");
 const GATEWAY_URL = `${GATEWAY_BASE_URL}/internal/wake-event`;
 const HEARTBEAT_URL = `${GATEWAY_BASE_URL}/internal/heartbeat`;
-const TIME_ZONE = process.env.TIME_ZONE || "Europe/London";
+const TIME_ZONE = process.env.TIME_ZONE || "Asia/Shanghai";
 
 function normalizeContentToText(content) {
   if (typeof content === "string") return content;
